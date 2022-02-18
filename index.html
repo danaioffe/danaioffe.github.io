@@ -49,6 +49,7 @@
   			if(fClick) {
   				fClick =false;
   				currPage = Math.floor(Math.random() * 3) +1;
+				$('.dyn').empty();
   				$(".dyn").append(pages[currPage]);
   			}
   			else if(tClick) {
