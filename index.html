@@ -20,54 +20,13 @@
   </div>
 </body>
     <script type="text/javascript">
-      function arrayRandElement(arr) {
-        var rand = Math.floor(Math.random() * arr.length);
-        return arr[rand];
-    }
-      let fClick =true;
-      let tClick =true;
-      let counter =0;
-      let lastPage=0;
-      let currPage=0;
-      let pages = {
-        1:`<p>Can businesses be responsible and affordable at the same time?</p>',alt='<p>In my everyday life I constantly interact with businesses. I want to support brands which are more socially responsible: pay decent salaries, care about the environment, etc. At the same time I noticed that their products and services are usually more expensive. Therefore the support of this kind of brand is a privilege. I wonder if there is a way for a brand to be both responsible and affordable.</p>`,
-        2:`<p>What would an amusement park for adults look like?</p>',alt='<p>I was traveling a lot with my parents when I was little and we have been to a lot of amusement parks.I enjoyed them a lot. Periodically throughout my life I fantasized about my ideal rides and carousel. I am curious if there is an opportunity to develop a working business model for an amusement park for adults made in collaboration with modern artists, scientists and IT experts.</p>`
-        3:`<p>How do people find their career path?</p>',alt='<p>I want to set the career goals which would match my values, character and 
-mental features, provides suitable financial support and keeps me curious. Therefore I would like to dig into the career decision-making process.</p>`
-      }
-      let arr = [1,2,3]
-      $(".randomText").on("click", (e) => {
-        if(fClick) {
-          fClick =false;
-          currPage = Math.floor(Math.random() * 3) +1;
-          $(".dyn").append(pages[currPage]);
-        }
-        else if(tClick) {
-          tClick = false;
-          lastPage = currPage;
-          switch (currPage) {
-            case 1: 
-              currPage = arrayRandElement([2,3])
-              $(".dyn").append(pages[currPage]);
-              break;
-            
-            case 2: 
-              currPage = arrayRandElement([1,3])
-              $(".dyn").append(pages[currPage]);
-              break;
-            
-            case 3: 
-              currPage = arrayRandElement([1,2])
-              $(".dyn").append(pages[currPage])
-              break;
-          }
-        }
-        else {
-          let dlastPage = currPage;
-          currPage = 6-lastPage-currPage;
-          lastPage = dlastPage;
-          $(".dyn")[0].innerHTML = (pages[currPage]);
-        }
-      })
+      function arrayRandElement(arr) {	 	var rand = Math.floor(Math.random() * arr.length);	 	return arr[rand];		} 		let fClick =true; 		let tClick =true; 		let counter =0; 		let lastPage=0; 		let currPage=0; 		let pages = { 			1:'<p>What would an amusement park for adults look like?
+
+I was traveling a lot with my parents when I was little and we have been to a lot of amusement parks.I enjoyed them a lot. Periodically throughout my life I fantasized about my ideal rides and carousel. I am curious if there is an opportunity to develop a working business model for an amusement park for adults made in collaboration with modern artists, scientists and IT experts.</p>', 			2:'<p>How do people find their career path?
+
+I want to set the career goals which would match my values, character and 
+mental features, provides suitable financial support and keeps me curious. Therefore I would like to dig into the career decision-making process.</p>', 			3:'<p>Can businesses be responsible and affordable at the same time?
+
+In my everyday life I constantly interact with businesses. I want to support brands which are more socially responsible: pay decent salaries, care about the environment, etc. At the same time I noticed that their products and services are usually more expensive. Therefore the support of this kind of brand is a privilege. I wonder if there is a way for a brand to be both responsible and affordable.</p>' 		} 		let arr = [1,2,3] 		$(".randomText").on("click", (e) => { 			if(fClick) { 				fClick =false; 				currPage = Math.floor(Math.random() * 3) +1;				$('.dyn').empty(); 				$(".dyn").append(pages[currPage]); 			} 			else if(tClick) { 				tClick = false; 				lastPage = currPage;				$('.dyn').empty(); 				switch (currPage) { 					case 1: 						currPage = arrayRandElement([2,3]) 						$(".dyn").append(pages[currPage]); 						break; 					 					case 2: 						currPage = arrayRandElement([1,3]) 						$(".dyn").append(pages[currPage]); 						break; 					 					case 3: 						currPage = arrayRandElement([1,2]) 						$(".dyn").append(pages[currPage]) 						break; 				} 			} 			else { 				let dlastPage = currPage; 				currPage = 6-lastPage-currPage; 				lastPage = dlastPage; 				$(".dyn")[0].innerHTML = (pages[currPage]); 			} 		})
      </script>
 </html>
